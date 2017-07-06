@@ -1,0 +1,124 @@
+<!-- this is the page for the webcam stuff -->
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webcam</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/homepage_styles.css">
+    <link rel="stylesheet" href="styles/xknob.css">
+    
+    <link href="styles/webcam_styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<nav id="topnav" class="navbar navbar-default">
+    <div class="container">
+        <!--
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Home Automation 1.1</a>
+        </div>
+        
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="webcam.html">Webcam</a></li>
+                <li><a href="info.html">Info</a></li>
+                <li><a href="webapp/index.html" target="_blank">Settings</a></li>
+            </ul>
+        </div>
+        -->
+    </div>
+</nav>
+
+<div class="container">
+   <div class="row">
+       <div class="col-md-1">
+           <br />
+           <br />
+           <br />
+           <br />
+           <button id="tiltPlus" title="fake">^</button>
+           <div align="center">
+             <input id="tiltSlider" type="range" orient="vertical" min="-90" max="90" step="10" value="0"/>
+           </div>
+           <button id="tiltMinus" title="fake">v</button>
+           <p class="note">Tilt: <span id="tiltValue">0</span></p>
+       </div>
+       <div class="col-md-4">
+           <h4>Timestamp: <span id="timestamp"></span></h4>
+
+           <img id="pic" src="images/img.jpg" alt="My webcam image"/>
+           <br />
+           <br />
+           <!--<div align="center">-->
+               <!-- buttons
+                <button id="fakeB" title="Pan Left">Pan Left</button>
+                <button id="fakeB" title="Pan Right">Pan Right</button>
+                <button id="bakeB" title="Tilt Up">Tilt Up</button>
+                <button id="bakeB" title="Tilt Down">Tilt Down</button>
+                <button id="bakeB" title="Zoom In">Zoom In</button>
+                <button id="bakeB" title="Zoom Out">Zoom Out</button>
+                -->
+                <div style="width: 360px;">
+                    <div style="float: left; width: 40px;"><button id="panMinus" title="fake"><</button></div>
+                    <div style="float: left; width: 270px;"><input id="panSlider" type="range" min="-90" max="90" step="10" value="0" /></div>
+                    <div style="float: right; width: 25px;"><button id="panPlus" title="fake">></button></div>
+                    <br style="clear: left;" />
+                </div>
+                <p class="note" align="center">Pan: <span id="panValue">0</span></p>
+                    <div align="center">
+                        <x-knob id="zoomKnob" min="-0.375" max="0.375" divisions="8" value="-0.375"></x-knob>
+                    </div>
+                    <!-- old zoom
+                <div style="width: 360px;">
+                    <div style="float: left; width: 40px;"><button id="zoomMinus" title="fake"><</button></div>
+                    <div style="float: left; width: 270px;"><input id="zoomSlider" type="range" min="-90" max="90" step="10" value="0" /></div>
+                    <div style="float: right; width: 25px;"><button id="zoomPlus" title="fake">></button></div>
+                    <br style="clear: left;" />
+                </div>
+                    -->
+                <p align="center">Zoom: <span id="zoomValue">1</span>x </p>
+                
+                <p class="note" align="center">PTZ value: <span id="ptz">0</span></p>
+                <p class="note" align="center">PKT value: <span id="pkt">0</span></p>
+                <p class="note" align="center">Websocket status: <span id="status">undefined</span></p>
+                
+           <!--</div>-->
+                    
+                    
+       </div>
+       <!--
+       <div class="col-md-4">
+           <br />
+           <br />
+           <br />
+           <br />
+           <br />
+           <button id="btnWS" title="Click to start webcam">Start Webcam</button>
+
+           <h3>Log</h3>
+
+           <div id="log">&nbsp;</div>
+
+       </div>
+       -->
+
+   </div>
+    
+    <script src="scripts/webcam_sliders.js"></script>
+    <script src="scripts/xknob.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</div>
+</body>
+</html>
